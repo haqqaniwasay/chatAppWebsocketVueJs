@@ -75,8 +75,8 @@ const App = () => {
   const onSocketMessage = useCallback((dataStr) => {
     const data = JSON.parse(dataStr);
     console.log("data", data);
-    if (data.members) {
-      setMembers(data.members);
+    if (data.users) {
+      setMembers(data.users);
     } else if (data.publicMessage) {
       setChatRows((oldArray) => [
         ...oldArray,

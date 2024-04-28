@@ -40,13 +40,16 @@ export const ChatClient = (props: Props) => {
             <List component="nav">
               {props.members.map((item) => (
                 <ListItem
-                  key={item}
+                  key={item.userId}
                   onClick={() => {
-                    props.onPrivateMessage(item);
+                    props.onPrivateMessage(item.userId);
                   }}
                   button
                 >
-                  <ListItemText style={{ fontWeight: 800 }} primary={item} />
+                  <ListItemText
+                    style={{ fontWeight: 800 }}
+                    primary={item.userId}
+                  />
                 </ListItem>
               ))}
             </List>
